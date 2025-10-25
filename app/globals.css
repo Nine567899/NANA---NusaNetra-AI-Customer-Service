@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rose-pink: #FFC0CB;
+  --warm-beige: #D8A39D;
+  --foreground: #2c2c2c;
+}
+
+body {
+  color: var(--foreground);
+  background: linear-gradient(135deg, var(--rose-pink) 0%, var(--warm-beige) 100%);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Elegant gradient for buttons and accents */
+.gradient-bg {
+  background: linear-gradient(135deg, #D8A39D 0%, #C9948F 100%);
+  box-shadow: 0 4px 15px rgba(216, 163, 157, 0.4);
+  transition: all 0.3s ease;
+}
+
+.gradient-bg:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(216, 163, 157, 0.6);
+}
+
+/* Luxurious gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #C9948F 0%, #A67C77 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: Georgia, serif;
+}
+
+/* Glass-morphic card with elegant shadow */
+.web3-card {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.web3-card:hover {
+  transform: scale(0.98);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* User message bubble - warm elegant tone */
+.chat-bubble-user {
+  background: linear-gradient(135deg, #C9948F 0%, #B88379 100%);
+  box-shadow: 0 4px 12px rgba(201, 148, 143, 0.3);
+}
+
+/* AI message bubble - soft luxurious feel */
+.chat-bubble-ai {
+  background: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 3D Zoom-out transition effect */
+.zoom-transition {
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.zoom-transition:active {
+  transform: scale(0.95);
+}
+
+/* Glimmering connect button effect */
+.jewel-button {
+  position: relative;
+  background: linear-gradient(135deg, #D8A39D 0%, #C9948F 50%, #B88379 100%);
+  box-shadow: 0 6px 20px rgba(216, 163, 157, 0.5);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.jewel-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+.jewel-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(216, 163, 157, 0.7);
+}
+
+/* Premium star glow effect */
+.premium-glow {
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8),
+               0 0 20px rgba(255, 215, 0, 0.6),
+               0 0 30px rgba(255, 215, 0, 0.4);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Diamond icon sparkle */
+.diamond-sparkle {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+    filter: brightness(1.3);
+  }
+}
+
+/* Override Solana Wallet Adapter purple colors with elegant gradient */
+.wallet-adapter-button {
+  background: linear-gradient(135deg, #D8A39D 0%, #C9948F 50%, #B88379 100%) !important;
+  border: none !important;
+  box-shadow: 0 6px 20px rgba(216, 163, 157, 0.5) !important;
+  transition: all 0.4s ease !important;
+}
+
+.wallet-adapter-button:not([disabled]):hover {
+  background: linear-gradient(135deg, #C9948F 0%, #B88379 50%, #A67C77 100%) !important;
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 10px 30px rgba(216, 163, 157, 0.7) !important;
+}
+
+.wallet-adapter-button[disabled] {
+  opacity: 0.5 !important;
+}
+
+.wallet-adapter-modal-wrapper {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.wallet-adapter-modal {
+  background: linear-gradient(135deg, #FFC0CB 0%, #D8A39D 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+.wallet-adapter-modal-title {
+  color: #2c2c2c !important;
+  font-family: Georgia, serif !important;
+}
+
+.wallet-adapter-button-trigger {
+  background: linear-gradient(135deg, #D8A39D 0%, #C9948F 50%, #B88379 100%) !important;
+}
